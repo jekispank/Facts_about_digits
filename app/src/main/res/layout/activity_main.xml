@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.MainActivity">
+
+    <ImageView
+        android:id="@+id/tv_image"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/digits_art" />
+
+    <TextView
+        android:id="@+id/tv_enter_digits"
+        style="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/enter_your_digit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/violet"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_image"
+        app:layout_constraintStart_toStartOf="@+id/tv_image"
+        app:layout_constraintTop_toBottomOf="@+id/tv_image" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/input_number"
+        android:textColorHint="@color/violet"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="29dp"
+        app:boxCornerRadiusBottomStart="29dp"
+        app:boxCornerRadiusTopEnd="29dp"
+        app:boxCornerRadiusTopStart="29dp"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enter_digits">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment_container"
+        class="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_get_fact"
+        app:navGraph="@navigation/nav_graph" />
+
+    <Button
+        android:id="@+id/bt_get_fact"
+        android:layout_width="165dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="8dp"
+        android:enabled="false"
+        android:text="@string/get_fact"
+        app:backgroundTint="@color/violet"
+        app:cornerRadius="29dp"
+        app:layout_constraintStart_toStartOf="@id/edit_layout"
+        app:layout_constraintTop_toBottomOf="@id/edit_layout" />
+
+    <Button
+        android:id="@+id/bt_get_random_fact"
+        android:layout_width="165dp"
+        android:layout_height="58dp"
+        android:text="@string/get_random_fact"
+        android:textSize="12sp"
+        app:backgroundTint="@color/violet"
+        app:cornerRadius="29dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_get_fact"
+        app:layout_constraintEnd_toEndOf="@id/edit_layout"
+        app:layout_constraintTop_toTopOf="@+id/bt_get_fact" />
+
+    <ImageView
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/separator_line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

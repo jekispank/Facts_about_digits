@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Interesting facts about numbers</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_your_digit">Enter your digit</string>
+    <string name="get_fact">Get fact</string>
+    <string name="get_random_fact">Get random fact</string>
+    <string name="input_number">Input a number</string>
+</resources>
